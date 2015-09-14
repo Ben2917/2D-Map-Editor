@@ -1,0 +1,1 @@
+/home/fedora-22/Documents/MapEditor/build/src/CMakeFiles/map_editor.dir
