@@ -1,0 +1,4 @@
+The Hack font source repository is located at:
+
+https://github.com/chrissimpkins/Hack
+
