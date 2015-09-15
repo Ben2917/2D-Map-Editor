@@ -118,9 +118,32 @@ src/CMakeFiles/map_editor.dir/dirhandler.cpp.o.provides: src/CMakeFiles/map_edit
 
 src/CMakeFiles/map_editor.dir/dirhandler.cpp.o.provides.build: src/CMakeFiles/map_editor.dir/dirhandler.cpp.o
 
+src/CMakeFiles/map_editor.dir/textprinter.cpp.o: src/CMakeFiles/map_editor.dir/flags.make
+src/CMakeFiles/map_editor.dir/textprinter.cpp.o: ../src/textprinter.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/fedora-22/Documents/MapEditor/build/CMakeFiles $(CMAKE_PROGRESS_4)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/CMakeFiles/map_editor.dir/textprinter.cpp.o"
+	cd /home/fedora-22/Documents/MapEditor/build/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/map_editor.dir/textprinter.cpp.o -c /home/fedora-22/Documents/MapEditor/src/textprinter.cpp
+
+src/CMakeFiles/map_editor.dir/textprinter.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/map_editor.dir/textprinter.cpp.i"
+	cd /home/fedora-22/Documents/MapEditor/build/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/fedora-22/Documents/MapEditor/src/textprinter.cpp > CMakeFiles/map_editor.dir/textprinter.cpp.i
+
+src/CMakeFiles/map_editor.dir/textprinter.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/map_editor.dir/textprinter.cpp.s"
+	cd /home/fedora-22/Documents/MapEditor/build/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/fedora-22/Documents/MapEditor/src/textprinter.cpp -o CMakeFiles/map_editor.dir/textprinter.cpp.s
+
+src/CMakeFiles/map_editor.dir/textprinter.cpp.o.requires:
+.PHONY : src/CMakeFiles/map_editor.dir/textprinter.cpp.o.requires
+
+src/CMakeFiles/map_editor.dir/textprinter.cpp.o.provides: src/CMakeFiles/map_editor.dir/textprinter.cpp.o.requires
+	$(MAKE) -f src/CMakeFiles/map_editor.dir/build.make src/CMakeFiles/map_editor.dir/textprinter.cpp.o.provides.build
+.PHONY : src/CMakeFiles/map_editor.dir/textprinter.cpp.o.provides
+
+src/CMakeFiles/map_editor.dir/textprinter.cpp.o.provides.build: src/CMakeFiles/map_editor.dir/textprinter.cpp.o
+
 src/CMakeFiles/map_editor.dir/editor.cpp.o: src/CMakeFiles/map_editor.dir/flags.make
 src/CMakeFiles/map_editor.dir/editor.cpp.o: ../src/editor.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/fedora-22/Documents/MapEditor/build/CMakeFiles $(CMAKE_PROGRESS_4)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/fedora-22/Documents/MapEditor/build/CMakeFiles $(CMAKE_PROGRESS_5)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/CMakeFiles/map_editor.dir/editor.cpp.o"
 	cd /home/fedora-22/Documents/MapEditor/build/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/map_editor.dir/editor.cpp.o -c /home/fedora-22/Documents/MapEditor/src/editor.cpp
 
@@ -143,7 +166,7 @@ src/CMakeFiles/map_editor.dir/editor.cpp.o.provides.build: src/CMakeFiles/map_ed
 
 src/CMakeFiles/map_editor.dir/timer.cpp.o: src/CMakeFiles/map_editor.dir/flags.make
 src/CMakeFiles/map_editor.dir/timer.cpp.o: ../src/timer.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/fedora-22/Documents/MapEditor/build/CMakeFiles $(CMAKE_PROGRESS_5)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/fedora-22/Documents/MapEditor/build/CMakeFiles $(CMAKE_PROGRESS_6)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/CMakeFiles/map_editor.dir/timer.cpp.o"
 	cd /home/fedora-22/Documents/MapEditor/build/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/map_editor.dir/timer.cpp.o -c /home/fedora-22/Documents/MapEditor/src/timer.cpp
 
@@ -169,6 +192,7 @@ map_editor_OBJECTS = \
 "CMakeFiles/map_editor.dir/app_main.cpp.o" \
 "CMakeFiles/map_editor.dir/main.cpp.o" \
 "CMakeFiles/map_editor.dir/dirhandler.cpp.o" \
+"CMakeFiles/map_editor.dir/textprinter.cpp.o" \
 "CMakeFiles/map_editor.dir/editor.cpp.o" \
 "CMakeFiles/map_editor.dir/timer.cpp.o"
 
@@ -178,11 +202,13 @@ map_editor_EXTERNAL_OBJECTS =
 ../bin/map_editor: src/CMakeFiles/map_editor.dir/app_main.cpp.o
 ../bin/map_editor: src/CMakeFiles/map_editor.dir/main.cpp.o
 ../bin/map_editor: src/CMakeFiles/map_editor.dir/dirhandler.cpp.o
+../bin/map_editor: src/CMakeFiles/map_editor.dir/textprinter.cpp.o
 ../bin/map_editor: src/CMakeFiles/map_editor.dir/editor.cpp.o
 ../bin/map_editor: src/CMakeFiles/map_editor.dir/timer.cpp.o
 ../bin/map_editor: src/CMakeFiles/map_editor.dir/build.make
 ../bin/map_editor: /usr/lib64/libSDL2.so
 ../bin/map_editor: /usr/lib64/libSDL2_image.so
+../bin/map_editor: /usr/lib64/libSDL2_ttf.so
 ../bin/map_editor: src/CMakeFiles/map_editor.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX executable ../../bin/map_editor"
 	cd /home/fedora-22/Documents/MapEditor/build/src && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/map_editor.dir/link.txt --verbose=$(VERBOSE)
@@ -194,6 +220,7 @@ src/CMakeFiles/map_editor.dir/build: ../bin/map_editor
 src/CMakeFiles/map_editor.dir/requires: src/CMakeFiles/map_editor.dir/app_main.cpp.o.requires
 src/CMakeFiles/map_editor.dir/requires: src/CMakeFiles/map_editor.dir/main.cpp.o.requires
 src/CMakeFiles/map_editor.dir/requires: src/CMakeFiles/map_editor.dir/dirhandler.cpp.o.requires
+src/CMakeFiles/map_editor.dir/requires: src/CMakeFiles/map_editor.dir/textprinter.cpp.o.requires
 src/CMakeFiles/map_editor.dir/requires: src/CMakeFiles/map_editor.dir/editor.cpp.o.requires
 src/CMakeFiles/map_editor.dir/requires: src/CMakeFiles/map_editor.dir/timer.cpp.o.requires
 .PHONY : src/CMakeFiles/map_editor.dir/requires

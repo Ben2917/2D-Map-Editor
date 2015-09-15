@@ -51,7 +51,8 @@ void AppMain::EventLoop()
 void AppMain::MainLoop()
 {
 
-    editor = new Editor("resources", ren.get(), 3200, 3200);
+    editor = new Editor("resources/Hack-Regular.ttf", 28, "resources", 
+        ren.get(), 3200, 3200);
 
     float frame_time = 0.0;    
 

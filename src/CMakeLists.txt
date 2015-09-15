@@ -6,6 +6,7 @@ set(BIN_DIR ${map_editor_SOURCE_DIR}/bin)
 
 add_executable(map_editor ${SRCS})
 
-target_link_libraries(map_editor ${SDL2_LIBRARY} ${SDL2_IMAGE_LIBRARY})
+target_link_libraries(map_editor ${SDL2_LIBRARY} ${SDL2_IMAGE_LIBRARY}
+    ${SDL2_TTF_LIBRARY})
 
 install(TARGETS map_editor RUNTIME DESTINATION ${BIN_DIR})

@@ -252,6 +252,30 @@ main.cpp.s:
 	cd /home/fedora-22/Documents/MapEditor/build && $(MAKE) -f src/CMakeFiles/map_editor.dir/build.make src/CMakeFiles/map_editor.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+textprinter.o: textprinter.cpp.o
+.PHONY : textprinter.o
+
+# target to build an object file
+textprinter.cpp.o:
+	cd /home/fedora-22/Documents/MapEditor/build && $(MAKE) -f src/CMakeFiles/map_editor.dir/build.make src/CMakeFiles/map_editor.dir/textprinter.cpp.o
+.PHONY : textprinter.cpp.o
+
+textprinter.i: textprinter.cpp.i
+.PHONY : textprinter.i
+
+# target to preprocess a source file
+textprinter.cpp.i:
+	cd /home/fedora-22/Documents/MapEditor/build && $(MAKE) -f src/CMakeFiles/map_editor.dir/build.make src/CMakeFiles/map_editor.dir/textprinter.cpp.i
+.PHONY : textprinter.cpp.i
+
+textprinter.s: textprinter.cpp.s
+.PHONY : textprinter.s
+
+# target to generate assembly for a file
+textprinter.cpp.s:
+	cd /home/fedora-22/Documents/MapEditor/build && $(MAKE) -f src/CMakeFiles/map_editor.dir/build.make src/CMakeFiles/map_editor.dir/textprinter.cpp.s
+.PHONY : textprinter.cpp.s
+
 timer.o: timer.cpp.o
 .PHONY : timer.o
 
@@ -301,6 +325,9 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... textprinter.o"
+	@echo "... textprinter.i"
+	@echo "... textprinter.s"
 	@echo "... timer.o"
 	@echo "... timer.i"
 	@echo "... timer.s"

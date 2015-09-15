@@ -53,6 +53,8 @@ map
 -
 dirhandler.h
 /home/fedora-22/Documents/MapEditor/src/dirhandler.h
+textprinter.h
+/home/fedora-22/Documents/MapEditor/src/textprinter.h
 
 /home/fedora-22/Documents/MapEditor/src/errorprinter.h
 string
@@ -63,6 +65,24 @@ iostream
 /home/fedora-22/Documents/MapEditor/src/main.cpp
 app_main.h
 /home/fedora-22/Documents/MapEditor/src/app_main.h
+
+/home/fedora-22/Documents/MapEditor/src/textprinter.cpp
+textprinter.h
+/home/fedora-22/Documents/MapEditor/src/textprinter.h
+
+/home/fedora-22/Documents/MapEditor/src/textprinter.h
+SDL.h
+-
+SDL_ttf.h
+-
+memory
+-
+string
+-
+vector
+-
+timer.h
+/home/fedora-22/Documents/MapEditor/src/timer.h
 
 /home/fedora-22/Documents/MapEditor/src/timer.cpp
 timer.h
@@ -629,6 +649,14 @@ SDL_error.h
 /usr/include/SDL2/SDL_error.h
 SDL_video.h
 /usr/include/SDL2/SDL_video.h
+begin_code.h
+/usr/include/SDL2/begin_code.h
+close_code.h
+/usr/include/SDL2/close_code.h
+
+/usr/include/SDL2/SDL_ttf.h
+SDL.h
+/usr/include/SDL2/SDL.h
 begin_code.h
 /usr/include/SDL2/begin_code.h
 close_code.h

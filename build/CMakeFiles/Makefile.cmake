@@ -13,6 +13,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "CMakeFiles/3.2.2/CMakeSystem.cmake"
   "../cmake/FindSDL2.cmake"
   "../cmake/FindSDL2_image.cmake"
+  "../cmake/FindSDL2_ttf.cmake"
   "../src/CMakeLists.txt"
   "/usr/share/cmake/Modules/CMakeCInformation.cmake"
   "/usr/share/cmake/Modules/CMakeCXXInformation.cmake"

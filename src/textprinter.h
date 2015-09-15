@@ -10,6 +10,44 @@
 
 #include <memory>
 #include <string>
+#include <vector>
+
+
+#include "timer.h"
+
+
+struct TimedText
+{
+
+
+    public:
+
+
+        // duration_sec is the duration in seconds the
+        // text should stay on screen for.
+        TimedText(std::string message, SDL_Color colour,
+            float duration_sec, float time_in, int x, int y);
+
+
+        std::string text;
+
+
+        float duration;
+
+
+        SDL_Color colour;
+
+
+        int x;
+
+
+        int y;
+
+
+        float time_in;
+
+
+};
 
 
 class TextPrinter
@@ -19,11 +57,17 @@ class TextPrinter
     public:
 
 
+        TextPrinter();
+
+
         TextPrinter(std::string font_filename, int text_size);
 
 
-        void PrintText(SDL_Renderer *ren, SDL_Color colour, 
-            std::string text, int x, int y); 
+        void PrintText(SDL_Renderer *ren); 
+
+
+        void AddText(std::string text, SDL_Color colour, 
+            float duration_sec, int x, int y);
 
 
     private:
@@ -33,6 +77,12 @@ class TextPrinter
 
 
         std::unique_ptr<TTF_Font, void(*)(TTF_Font*)> font;
+
+
+        std::vector<TimedText> print_list;
+
+
+        Timer text_timer;
 
 
         void LoadFont(std::string font_filename, int size);

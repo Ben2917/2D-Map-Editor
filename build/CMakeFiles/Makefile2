@@ -74,7 +74,7 @@ src/preinstall:
 src/CMakeFiles/map_editor.dir/all:
 	$(MAKE) -f src/CMakeFiles/map_editor.dir/build.make src/CMakeFiles/map_editor.dir/depend
 	$(MAKE) -f src/CMakeFiles/map_editor.dir/build.make src/CMakeFiles/map_editor.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/fedora-22/Documents/MapEditor/build/CMakeFiles  1 2 3 4 5
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/fedora-22/Documents/MapEditor/build/CMakeFiles  1 2 3 4 5 6
 	@echo "Built target map_editor"
 .PHONY : src/CMakeFiles/map_editor.dir/all
 
@@ -84,7 +84,7 @@ all: src/CMakeFiles/map_editor.dir/all
 
 # Build rule for subdir invocation for target.
 src/CMakeFiles/map_editor.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fedora-22/Documents/MapEditor/build/CMakeFiles 5
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fedora-22/Documents/MapEditor/build/CMakeFiles 6
 	$(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/map_editor.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/fedora-22/Documents/MapEditor/build/CMakeFiles 0
 .PHONY : src/CMakeFiles/map_editor.dir/rule

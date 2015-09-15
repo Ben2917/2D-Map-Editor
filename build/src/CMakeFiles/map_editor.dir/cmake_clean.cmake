@@ -2,6 +2,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/map_editor.dir/app_main.cpp.o"
   "CMakeFiles/map_editor.dir/main.cpp.o"
   "CMakeFiles/map_editor.dir/dirhandler.cpp.o"
+  "CMakeFiles/map_editor.dir/textprinter.cpp.o"
   "CMakeFiles/map_editor.dir/editor.cpp.o"
   "CMakeFiles/map_editor.dir/timer.cpp.o"
   "../../bin/map_editor.pdb"
