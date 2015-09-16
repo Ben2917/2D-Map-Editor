@@ -159,8 +159,6 @@ void Editor::LoadTiles(SDL_Renderer *ren, std::string dir_name)
 void Editor::NextTile()
 {
 
-    //std::cout << "Current tile_itr: " << std::string(*tile_itr) << ".\n";
-
     if(tile_itr != tiles.end())
     {
 
@@ -172,8 +170,7 @@ void Editor::NextTile()
 
         t_printer.get()->AddText("No more tiles! Use Z to scroll back.",
             {255, 127, 127, 255}, 2.0f, 0, 0);
-        --tile_itr;
-
+        
     }
 
 }
@@ -181,8 +178,6 @@ void Editor::NextTile()
 
 void Editor::PrevTile()
 {
- 
-    // std::cout << "Current tile_itr: " << std::string(*tile_itr) << ".\n";
    
     if(tile_itr != tiles.begin())
     {
@@ -195,8 +190,7 @@ void Editor::PrevTile()
 
         t_printer.get()->AddText("No more tiles! Use X to scroll forward.",
             {255, 127, 127, 255}, 2.0,  0, 0);
-        ++tile_itr;
-
+        
     }  
 
 }

@@ -5,7 +5,7 @@
 
 AppMain::AppMain(int level_w, int level_h) : 
     win(SDL_CreateWindow(
-    "Map Editor v0.0.1", 0, 0, 1280, 720, SDL_WINDOW_SHOWN),
+    "Map Editor v0.0.1", 0, 0, 640, 480, SDL_WINDOW_SHOWN),
     SDL_DestroyWindow),
     ren(SDL_CreateRenderer(win.get(), -1, SDL_RENDERER_PRESENTVSYNC
     | SDL_RENDERER_TARGETTEXTURE | SDL_RENDERER_ACCELERATED),
@@ -14,9 +14,9 @@ AppMain::AppMain(int level_w, int level_h) :
 
     app_quit = false;
 
-    camera = {0, 0, 1280, 720};
+    camera = {0, 0, 640, 480};
 
-    cam_vel = 20;
+    cam_vel = 1;
 
     this->level_w = level_w;
 
@@ -97,7 +97,7 @@ void AppMain::MoveCamera(float frame_time)
         camera.x -= cam_vel * frame_time;
 
     }
-    else if(x <= 1280 && x >= 1240)
+    else if(x <= camera.w && x >= camera.w - 40)
     {
 
         camera.x += cam_vel * frame_time;
@@ -110,7 +110,7 @@ void AppMain::MoveCamera(float frame_time)
         camera.y -= cam_vel + frame_time;
 
     }
-    else if(y <= 720 && y >= 680)
+    else if(y <= camera.h && y >= camera.h - 40)
     {
 
         camera.y += cam_vel * frame_time;

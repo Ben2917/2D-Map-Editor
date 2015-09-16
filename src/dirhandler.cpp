@@ -69,6 +69,29 @@ int DirectoryHandler::ReadFile(std::string file_directory,
 }
 
 
+void DirectoryHandler::Write2DArrayToFile(std::array<std::array
+    <std::string, 50>, 50> array, std::string file_name, std::string directory)
+{
+
+    // create file in given directory or open existing file to overwrite
+    
+    for (int i = 0; i < 50; ++i)
+    {
+
+        for (int i = 0; i < 50; ++i)
+        {
+
+            // write element to file
+
+        }
+
+        // start new line
+
+    }
+
+} 
+
+
 int DirectoryHandler::ReadLinuxDirectory(std::string dir_name,
     std::vector<std::string> &filenames)
 {
@@ -81,7 +104,7 @@ int DirectoryHandler::ReadLinuxDirectory(std::string dir_name,
     {
 
         ErrorPrinter::PrintError("Error opening directory " + dir_name);
-
+        // throw exception
         return -1;
 
     }
@@ -118,4 +141,19 @@ int DirectoryHandler::ReadWindowsDirectory(std::string dir_name,
 }
 
 
+void DirectoryHandler::CreateLinuxDirectory(std::string name, 
+    std::string location)
+{
 
+    // To be written
+
+}
+
+
+void DirectoryHandler::CreateWindowsDirectory(std::string name,
+    std::string location)
+{
+
+    // To be written
+
+}

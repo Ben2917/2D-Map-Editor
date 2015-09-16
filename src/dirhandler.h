@@ -34,6 +34,14 @@ class DirectoryHandler
             std::string filename, std::string &content);
 
 
+        void Write2DArrayToFile(std::array<std::array<std::string, 50>, 50>
+            array, std::string file_name, std::string directory);
+
+
+        void WriteStringToFile(std::string content, std::string file_name,
+            std::string directory);
+
+
     private:
 
 
@@ -43,6 +51,14 @@ class DirectoryHandler
 
         int ReadWindowsDirectory(std::string dir_name,
             std::vector<std::string> &filenames);
+
+
+        void CreateLinuxDirectory(std::string name, 
+            std::string location);
+
+
+        void CreateWindowsDirectory(std::string name, 
+            std::string location);
 
 
 };
