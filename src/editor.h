@@ -34,7 +34,7 @@ class Editor
         ~Editor();
 
 
-        void HandleEvents(SDL_Event e, SDL_Renderer *ren);
+        void HandleEvents(SDL_Event e, SDL_Renderer *ren, SDL_Rect camera);
 
 
         void Update(SDL_Renderer *ren, SDL_Rect camera);
@@ -56,9 +56,6 @@ class Editor
         std::map<std::string, SDL_Texture*>::iterator tile_itr;
 
 
-        SDL_Texture* test;
-
-
         // Stores all of the available tiles.
         std::map<std::string, SDL_Texture*> tiles;
 
@@ -75,16 +72,16 @@ class Editor
         void LoadTiles(SDL_Renderer *ren, std::string dir_name);
         
 
-        void NextTile(SDL_Renderer* ren);
+        void NextTile();
 
 
-        void PrevTile(SDL_Renderer* ren);
+        void PrevTile();
 
 
-        void PlaceTile(SDL_Renderer* ren); 
+        void PlaceTile(SDL_Renderer* ren, SDL_Rect camera); 
         
 
-        SDL_Rect GetGridSquare(int x, int y);
+        SDL_Rect GetGridSquare(int x, int y, SDL_Rect camera);
 
 
         void WriteMapToFile();  

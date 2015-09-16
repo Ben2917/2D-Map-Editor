@@ -16,7 +16,7 @@ AppMain::AppMain(int level_w, int level_h) :
 
     camera = {0, 0, 1280, 720};
 
-    cam_vel = 80;
+    cam_vel = 20;
 
     this->level_w = level_w;
 
@@ -41,7 +41,7 @@ void AppMain::EventLoop()
 
         }
 
-        editor->HandleEvents(e, ren.get());
+        editor->HandleEvents(e, ren.get(), camera);
 
     }
 
