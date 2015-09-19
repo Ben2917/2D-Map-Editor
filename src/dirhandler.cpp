@@ -69,25 +69,54 @@ int DirectoryHandler::ReadFile(std::string file_directory,
 }
 
 
-void DirectoryHandler::Write2DArrayToFile(std::array<std::array
-    <std::string, 50>, 50> array, std::string file_name, std::string directory)
+void DirectoryHandler::Write2DIntArrayToFile(std::array<std::array
+    <int, 50>, 50> arr, std::string file_name, std::string directory)
 {
 
-    // create file in given directory or open existing file to overwrite
+    std::ofstream map_file(std::string(directory + "/" + file_name));    
     
     for (int i = 0; i < 50; ++i)
     {
 
-        for (int i = 0; i < 50; ++i)
+        std::string temp = "";
+
+        for (int x = 0; x < 50; ++x)
         {
 
-            // write element to file
+            temp += std::to_string(arr[i][x]);
 
         }
 
-        // start new line
+        temp += "\n";
+
+        map_file << temp;
 
     }
+
+    map_file.close();
+
+    // Add "File written successfully." to print list. 
+    // Should appear for two seconds.
+
+}
+
+
+void DirectoryHandler::WriteStringVectorToFile(std::vector<std::string> key,
+    std::string file_name, std::string dir_name)
+{
+
+    std::ofstream file(std::string(file_name + "/" + dir_name));
+
+    // check for bad file opening etc.
+
+    for(unsigned int i = 0; i < key.size(); ++i)
+    {
+
+        file << std::string(key[i]) + "\n";        
+
+    }
+
+    file.close();
 
 } 
 

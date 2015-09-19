@@ -11,6 +11,7 @@
 
 #include <vector>
 #include <fstream>
+#include <array>
 
 
 #include "errorprinter.h"
@@ -34,8 +35,12 @@ class DirectoryHandler
             std::string filename, std::string &content);
 
 
-        void Write2DArrayToFile(std::array<std::array<std::string, 50>, 50>
-            array, std::string file_name, std::string directory);
+        void Write2DIntArrayToFile(std::array<std::array<int, 50>, 50>
+            arr, std::string file_name, std::string directory);
+
+
+        void WriteStringVectorToFile(std::vector<std::string> key,
+            std::string file_name, std::string directory);
 
 
         void WriteStringToFile(std::string content, std::string file_name,

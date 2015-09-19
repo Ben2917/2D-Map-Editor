@@ -50,23 +50,40 @@ class Editor
 
         
         // The visual representation of the map that the user is creating
+        // may replace and use seperate tiles because then they could
+        // be easily removed. This would need to be coupled with a 
+        // culling function so that drawing all of the tiles can be
+        // avoided
         std::unique_ptr<SDL_Texture, void(*)(SDL_Texture*)> map_tex;
 
 
-        std::map<std::string, SDL_Texture*>::iterator tile_itr;
+        std::vector<SDL_Texture*> tiles;
 
 
-        // Stores all of the available tiles.
-        std::map<std::string, SDL_Texture*> tiles;
+        // This is a key that shows which tile names 
+        // are mapped to which numbers
+        
+        // 0 MUST be reserved for empty space.
+        std::vector<std::string> tile_map;
 
 
         int current_tile;
 
-  
-        std::array<std::array<std::string, 50>, 50> map_arr;
-
 
         bool collidable;
+
+  
+        std::array<std::array<int, 50>, 50> map_arr;
+
+
+        void HandleMouseButtons(SDL_Event e, 
+            SDL_Renderer* ren, SDL_Rect camera);
+
+
+        void HandleKeys(SDL_Event e);
+
+      
+        void ClearMap();
 
 
         void LoadTiles(SDL_Renderer *ren, std::string dir_name);
@@ -84,7 +101,7 @@ class Editor
         SDL_Rect GetGridSquare(int x, int y, SDL_Rect camera);
 
 
-        void WriteMapToFile();  
+        void WriteMapToFile();
 
 
 };
