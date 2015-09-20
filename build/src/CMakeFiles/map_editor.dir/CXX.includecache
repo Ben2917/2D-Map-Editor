@@ -33,6 +33,10 @@ vector
 -
 fstream
 -
+array
+-
+exception
+-
 errorprinter.h
 /home/fedora-22/Documents/MapEditor/src/errorprinter.h
 

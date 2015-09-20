@@ -12,9 +12,98 @@
 #include <vector>
 #include <fstream>
 #include <array>
+#include <exception>
 
 
 #include "errorprinter.h"
+
+
+class UnsupportedOS : public std::exception
+{
+
+
+    public:
+
+
+        UnsupportedOS();
+
+
+        virtual const char* what();
+
+
+    protected:
+
+
+        std::string message;
+
+
+};
+
+
+class DirectoryError : public std::exception
+{
+
+
+    public:
+
+
+        DirectoryError(std::string dir_name);
+
+
+        virtual const char* what();
+
+
+    protected:
+
+
+        std::string message;
+
+
+};
+
+
+class FileReadError : public std::exception
+{
+
+
+    public:
+
+
+        FileReadError(std::string filename);
+
+
+        const char* what();
+
+
+    protected:
+
+
+        std::string message;
+
+
+};
+
+
+class FileWriteError : public std::exception
+{
+
+
+    public:
+
+
+        FileWriteError(std::string filename);
+
+
+        virtual const char* what();
+
+
+    protected:
+
+
+        std::string message;
+
+
+};
 
 
 class DirectoryHandler

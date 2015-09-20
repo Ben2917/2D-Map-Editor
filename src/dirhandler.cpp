@@ -3,6 +3,70 @@
 #include "dirhandler.h"
 
 
+UnsupportedOS::UnsupportedOS()
+{
+
+    message = "This operating system is unsupported.";
+
+}
+
+
+const char* UnsupportedOS::what()
+{
+
+    return message.c_str();
+
+}
+
+
+DirectoryError::DirectoryError(std::string dir_name)
+{
+
+    message = std::string("Error opening directory ") + dir_name;
+
+}
+
+
+const char* DirectoryError::what()
+{
+
+    return message.c_str();
+
+}
+
+
+FileReadError::FileReadError(std::string filename)
+{
+
+    message = std::string("Error reading file: ") + filename;
+
+}
+
+
+const char* FileReadError::what()
+{
+
+    return message.c_str();
+
+}
+
+
+FileWriteError::FileWriteError(std::string filename)
+{
+
+    message = std::string("Error writing to file ") + filename;
+
+}
+
+
+const char* FileWriteError::what()
+{
+
+    return message.c_str();
+
+}
+
+
 DirectoryHandler::DirectoryHandler(){}
 
 
@@ -28,8 +92,7 @@ int DirectoryHandler::ReadDirectory(std::string dir_name,
 
     #else
 
-        ErrorPrinter::PrintError(
-            "This operating system is not supported\n");
+        throw UnsupportedOS();
 
     #endif // OS check
 
@@ -45,9 +108,7 @@ int DirectoryHandler::ReadFile(std::string file_directory,
     if(!file.is_open())
     {
 
-        ErrorPrinter::PrintError("Problem opening file in directory "
-            + file_directory + " with the name " + filename); 
-        return -1;
+        throw FileReadError(filename);
 
     }
     else
@@ -64,6 +125,8 @@ int DirectoryHandler::ReadFile(std::string file_directory,
 
     }
 
+    // may want to perform a checksum.
+
     return 0;
 
 }
@@ -74,6 +137,13 @@ void DirectoryHandler::Write2DIntArrayToFile(std::array<std::array
 {
 
     std::ofstream map_file(std::string(directory + "/" + file_name));    
+
+    if(!map_file.is_open())
+    {
+
+        throw FileWriteError(file_name);
+
+    }
     
     for (int i = 0; i < 50; ++i)
     {
@@ -107,7 +177,12 @@ void DirectoryHandler::WriteStringVectorToFile(std::vector<std::string> key,
 
     std::ofstream file(std::string(file_name + "/" + dir_name));
 
-    // check for bad file opening etc.
+    if(!file.is_open())
+    {
+
+        throw FileWriteError(file_name);
+
+    }
 
     for(unsigned int i = 0; i < key.size(); ++i)
     {
@@ -132,9 +207,7 @@ int DirectoryHandler::ReadLinuxDirectory(std::string dir_name,
     if((dp = opendir(dir_name.c_str())) == NULL)
     {
 
-        ErrorPrinter::PrintError("Error opening directory " + dir_name);
-        // throw exception
-        return -1;
+        throw DirectoryError(dir_name);
 
     }
 
@@ -153,8 +226,6 @@ int DirectoryHandler::ReadLinuxDirectory(std::string dir_name,
     }
 
     closedir(dp);
-
-    return 0;
 
 }
 
